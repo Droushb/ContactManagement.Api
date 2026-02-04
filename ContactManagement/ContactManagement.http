@@ -1,0 +1,72 @@
+@ContactManagement_HostAddress = http://localhost:5257
+
+### Contacts - Get paged (default sort by CreatedAt desc)
+GET {{ContactManagement_HostAddress}}/api/contacts?page=1&pageSize=20&sortBy=CreatedAt&sortOrder=desc
+Accept: application/json
+
+### Contacts - Get by id
+# GET {{ContactManagement_HostAddress}}/api/contacts/{id}
+# Accept: application/json
+
+### Contacts - Create
+POST {{ContactManagement_HostAddress}}/api/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "phone": "+1234567890",
+  "customFieldValues": []
+}
+
+### Contacts - Update
+# PUT {{ContactManagement_HostAddress}}/api/contacts/{id}
+# Content-Type: application/json
+#
+# {
+#   "firstName": "Jane",
+#   "lastName": "Doe",
+#   "phone": "+1234567890",
+#   "customFieldValues": []
+# }
+
+### Contacts - Delete
+# DELETE {{ContactManagement_HostAddress}}/api/contacts/{id}
+
+### Contacts - Bulk merge by contact IDs
+# POST {{ContactManagement_HostAddress}}/api/contacts/merge
+# Content-Type: application/json
+#
+# {
+#   "contactIds": ["guid1", "guid2"]
+# }
+
+### Custom Fields - List all
+GET {{ContactManagement_HostAddress}}/api/customfields
+Accept: application/json
+
+### Custom Fields - Get by id
+# GET {{ContactManagement_HostAddress}}/api/customfields/{id}
+# Accept: application/json
+
+### Custom Fields - Create
+POST {{ContactManagement_HostAddress}}/api/customfields
+Content-Type: application/json
+
+{
+  "name": "Department",
+  "fieldType": "String"
+}
+
+### Custom Fields - Update
+# PUT {{ContactManagement_HostAddress}}/api/customfields/{id}
+# Content-Type: application/json
+#
+# {
+#   "name": "Department",
+#   "fieldType": "String"
+# }
+
+### Custom Fields - Delete
+# DELETE {{ContactManagement_HostAddress}}/api/customfields/{id}
